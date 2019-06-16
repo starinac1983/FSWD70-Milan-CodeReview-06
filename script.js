@@ -19,7 +19,7 @@ var Locations = /** @class */ (function () {
         this.locImage = locImage;
     }
     Locations.prototype.display = function () {
-        document.write("\n        <div class=\"col places\">\n            <p>" + this.locName + "</p>\n            <ul>\n              <li> " + this.locAddress + ", " + this.locZipCode + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>   \n  ");
+        document.write("\n        \n          <div class=\"col-lg-6 col-md-6 places\">\n              <p class=\"h2 text-danger\">Places</p>\n              <p class=\"h4 text-monospace\">" + this.locName + "</p>\n              <ul>\n                <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + "</li>\n                <li> <img src=\"" + this.locImage + "\"></li>\n              <ul>\n          </div>   \n  ");
     };
     return Locations;
 }());
@@ -38,7 +38,7 @@ var Restaurant = /** @class */ (function (_super) {
         return _this;
     }
     Restaurant.prototype.display = function () {
-        document.write("\n        <div class=\"col food\">\n            <p>" + this.locName + "</p>\n            <ul>\n              <li> " + this.locAddress + ", " + this.locZipCode + ", " + this.restaPhone + "</li>\n              <li> " + this.webAddress + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>  \n  ");
+        document.write("\n        <div class=\"col-lg-6 col-md-6 food\">\n            <p class=\"h2 text-danger\">Restaurants</p>\n            <p class=\"h4 text-monospace\">" + this.locName + "</p>\n            <ul>\n              <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + ", " + this.restaPhone + "</li>\n              <li class=\"h6 text-monospace\"> " + this.webAddress + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>  \n  ");
     };
     return Restaurant;
 }(Locations));
@@ -57,7 +57,7 @@ var Events = /** @class */ (function (_super) {
         return _this;
     }
     Events.prototype.display = function () {
-        document.write("\n        <div class=\"col games\">\n            <p>" + this.locName + "</p>\n            <ul>\n              <li> " + this.eventDate + ", " + this.eventTime + "</li>\n              <li> " + this.locAddress + ", " + this.locZipCode + "</li>\n              <li> " + this.ticketPrice + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>  \n  ");
+        document.write("\n        <div class=\"col-lg-6 col-md-6 games\">\n            <p class=\"h2 text-danger\">Events</p>\n            <p class=\"h4 text-monospace\">" + this.locName + "</p>\n            <ul>\n              <li class=\"h6 text-monospace\"> " + this.eventDate + ", " + this.eventTime + "</li>\n              <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + "</li>\n              <li class=\"h6 text-monospace\"> " + this.ticketPrice + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>  \n  ");
     };
     return Events;
 }(Locations));

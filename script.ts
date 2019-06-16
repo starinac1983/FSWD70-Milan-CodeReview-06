@@ -14,13 +14,15 @@ constructor (locName, locAddress, locZipCode, locImage) {
 
      display(){ 
       document.write(`
-        <div class="col places">
-            <p>${this.locName}</p>
-            <ul>
-              <li> ${this.locAddress}, ${this.locZipCode}</li>
-              <li> <img src="${this.locImage}"></li>
-            <ul>
-       </div>   
+        
+          <div class="col-lg-6 col-md-6 places">
+              <p class="h2 text-danger">Places</p>
+              <p class="h4 text-monospace">${this.locName}</p>
+              <ul>
+                <li class="h6 text-monospace"> ${this.locAddress}, ${this.locZipCode}</li>
+                <li> <img src="${this.locImage}"></li>
+              <ul>
+          </div>   
   `)}
  }
 
@@ -45,11 +47,12 @@ constructor (locName, locAddress, locZipCode, locImage, restaType, webAddress, r
 
      display(){ 
       document.write (`
-        <div class="col food">
-            <p>${this.locName}</p>
+        <div class="col-lg-6 col-md-6 food">
+            <p class="h2 text-danger">Restaurants</p>
+            <p class="h4 text-monospace">${this.locName}</p>
             <ul>
-              <li> ${this.locAddress}, ${this.locZipCode}, ${this.restaPhone}</li>
-              <li> ${this.webAddress}</li>
+              <li class="h6 text-monospace"> ${this.locAddress}, ${this.locZipCode}, ${this.restaPhone}</li>
+              <li class="h6 text-monospace"> ${this.webAddress}</li>
               <li> <img src="${this.locImage}"></li>
             <ul>
        </div>  
@@ -77,12 +80,13 @@ constructor (locName, locAddress, locZipCode, locImage, eventDate, eventTime, ti
 
      display(){ 
      document.write (`
-        <div class="col games">
-            <p>${this.locName}</p>
+        <div class="col-lg-6 col-md-6 games">
+            <p class="h2 text-danger">Events</p>
+            <p class="h4 text-monospace">${this.locName}</p>
             <ul>
-              <li> ${this.eventDate}, ${this.eventTime}</li>
-              <li> ${this.locAddress}, ${this.locZipCode}</li>
-              <li> ${this.ticketPrice}</li>
+              <li class="h6 text-monospace"> ${this.eventDate}, ${this.eventTime}</li>
+              <li class="h6 text-monospace"> ${this.locAddress}, ${this.locZipCode}</li>
+              <li class="h6 text-monospace"> ${this.ticketPrice}</li>
               <li> <img src="${this.locImage}"></li>
             <ul>
        </div>  
