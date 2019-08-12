@@ -13,7 +13,7 @@ constructor (locName, locAddress, locZipCode, locImage) {
    }
 
      display(){ 
-      document.write(`
+      return(`
         
           <div class="col-lg-6 col-md-6 places">
               <p class="h2 text-danger">Places</p>
@@ -46,7 +46,7 @@ constructor (locName, locAddress, locZipCode, locImage, restaType, webAddress, r
        }
 
      display(){ 
-      document.write (`
+      return(`
         <div class="col-lg-6 col-md-6 food">
             <p class="h2 text-danger">Restaurants</p>
             <p class="h4 text-monospace">${this.locName}</p>
@@ -79,7 +79,7 @@ constructor (locName, locAddress, locZipCode, locImage, eventDate, eventTime, ti
     }
 
      display(){ 
-     document.write (`
+     return (`
         <div class="col-lg-6 col-md-6 games">
             <p class="h2 text-danger">Events</p>
             <p class="h4 text-monospace">${this.locName}</p>
@@ -100,13 +100,13 @@ var trnava = new Events ("FC Spartak- FK Crvena Zvezda", "Športová 1", "917 01
 // trnava.display();
 
 
-var boring = document.getElementsByClassName('row');
+var boring = document.getElementById('theo');
 var locations = [arcDe,charles,zlatnoBurence,figl,psgZvezda,trnava];
  
-function canItHappen() {
-  for (let i = 0; i <7; i++) { 
-    $(boring[i]).each(function(){locations[i].display()}
-      )
-    }
-  }
-canItHappen();
+
+  for (let i = 0; i <locations.length ; i++) { 
+    // $(boring[i]).each(function(){locations[i].display()} //avoid each function, just for loop run. Inste
+    //   )
+    // }
+        boring.innerHTML += locations[i].display();
+}

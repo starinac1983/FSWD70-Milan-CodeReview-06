@@ -19,7 +19,7 @@ var Locations = /** @class */ (function () {
         this.locImage = locImage;
     }
     Locations.prototype.display = function () {
-        document.write("\n        \n          <div class=\"col-lg-6 col-md-6 places\">\n              <p class=\"h2 text-danger\">Places</p>\n              <p class=\"h4 text-monospace\">" + this.locName + "</p>\n              <ul>\n                <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + "</li>\n                <li> <img src=\"" + this.locImage + "\"></li>\n              <ul>\n          </div>   \n  ");
+        return ("\n        \n          <div class=\"col-lg-6 col-md-6 places\">\n              <p class=\"h2 text-danger\">Places</p>\n              <p class=\"h4 text-monospace\">" + this.locName + "</p>\n              <ul>\n                <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + "</li>\n                <li> <img src=\"" + this.locImage + "\"></li>\n              <ul>\n          </div>   \n  ");
     };
     return Locations;
 }());
@@ -38,7 +38,7 @@ var Restaurant = /** @class */ (function (_super) {
         return _this;
     }
     Restaurant.prototype.display = function () {
-        document.write("\n        <div class=\"col-lg-6 col-md-6 food\">\n            <p class=\"h2 text-danger\">Restaurants</p>\n            <p class=\"h4 text-monospace\">" + this.locName + "</p>\n            <ul>\n              <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + ", " + this.restaPhone + "</li>\n              <li class=\"h6 text-monospace\"> " + this.webAddress + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>  \n  ");
+        return ("\n        <div class=\"col-lg-6 col-md-6 food\">\n            <p class=\"h2 text-danger\">Restaurants</p>\n            <p class=\"h4 text-monospace\">" + this.locName + "</p>\n            <ul>\n              <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + ", " + this.restaPhone + "</li>\n              <li class=\"h6 text-monospace\"> " + this.webAddress + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>  \n  ");
     };
     return Restaurant;
 }(Locations));
@@ -57,7 +57,7 @@ var Events = /** @class */ (function (_super) {
         return _this;
     }
     Events.prototype.display = function () {
-        document.write("\n        <div class=\"col-lg-6 col-md-6 games\">\n            <p class=\"h2 text-danger\">Events</p>\n            <p class=\"h4 text-monospace\">" + this.locName + "</p>\n            <ul>\n              <li class=\"h6 text-monospace\"> " + this.eventDate + ", " + this.eventTime + "</li>\n              <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + "</li>\n              <li class=\"h6 text-monospace\"> " + this.ticketPrice + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>  \n  ");
+        return ("\n        <div class=\"col-lg-6 col-md-6 games\">\n            <p class=\"h2 text-danger\">Events</p>\n            <p class=\"h4 text-monospace\">" + this.locName + "</p>\n            <ul>\n              <li class=\"h6 text-monospace\"> " + this.eventDate + ", " + this.eventTime + "</li>\n              <li class=\"h6 text-monospace\"> " + this.locAddress + ", " + this.locZipCode + "</li>\n              <li class=\"h6 text-monospace\"> " + this.ticketPrice + "</li>\n              <li> <img src=\"" + this.locImage + "\"></li>\n            <ul>\n       </div>  \n  ");
     };
     return Events;
 }(Locations));
@@ -65,14 +65,11 @@ var psgZvezda = new Events("PSG - FK Crvena Zvezda", "24 Rue du Commandant Guilb
 // psgZvezda.display();
 var trnava = new Events("FC Spartak- FK Crvena Zvezda", "Športová 1", "917 01 Trnava", "img/trnava.jpg", "14.08.2018", "21:00", "€ 50");
 // trnava.display();
-var boring = document.getElementsByClassName('row');
+var boring = document.getElementById('theo');
 var locations = [arcDe, charles, zlatnoBurence, figl, psgZvezda, trnava];
-function canItHappen() {
-    var _loop_1 = function (i) {
-        $(boring[i]).each(function () { locations[i].display(); });
-    };
-    for (var i = 0; i < 7; i++) {
-        _loop_1(i);
-    }
+for (var i = 0; i < locations.length; i++) {
+    // $(boring[i]).each(function(){locations[i].display()} //avoid each function, just for loop run. Inste
+    //   )
+    // }
+    boring.innerHTML += locations[i].display();
 }
-canItHappen();
